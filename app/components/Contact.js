@@ -1,9 +1,8 @@
 import SectionTitle from "./SectionTitle";
 
 const CONTACTS = [
-  { label: "Email", value: "example@email.com", href: "mailto:example@email.com" },
-  { label: "GitHub", value: "github.com/username", href: "https://github.com/" },
-  { label: "LinkedIn", value: "linkedin.com/in/username", href: "https://linkedin.com/" },
+  { label: "Email", value: "ojy1421@naver.com", href: "mailto:ojy1421@naver.com" },
+  { label: "Phone", value: "010-1234-1234", href: "tel:010-1234-1234" },
 ];
 
 export default function Contact() {

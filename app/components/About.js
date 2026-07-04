@@ -16,6 +16,12 @@ export default function About() {
           <div>
             <div className="mb-7">
               <h3 className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-foreground-muted">
+                나이
+              </h3>
+              <p>25세</p>
+            </div>
+            <div className="mb-7">
+              <h3 className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-foreground-muted">
                 학력
               </h3>
               <p>물리학과 학부생</p>
