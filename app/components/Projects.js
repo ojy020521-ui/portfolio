@@ -1,9 +1,18 @@
 import SectionTitle from "./SectionTitle";
 
 const PROJECTS = [
-  { id: "01", title: "프로젝트 이름", tags: ["Tag", "Tag"] },
-  { id: "02", title: "프로젝트 이름", tags: ["Tag", "Tag"] },
-  { id: "03", title: "프로젝트 이름", tags: ["Tag", "Tag"] },
+  {
+    id: "01",
+    title: "학부연구생",
+    tags: ["물리학", "연구"],
+    description: "학부연구생으로 참여하며 실험 설계와 데이터 분석 경험을 쌓았습니다.",
+  },
+  {
+    id: "02",
+    title: "KIST 인턴",
+    tags: ["인턴십", "연구"],
+    description: "한국과학기술연구원(KIST)에서 인턴으로 근무하며 실무 연구 경험을 쌓았습니다.",
+  },
 ];
 
 export default function Projects() {
@@ -11,7 +20,7 @@ export default function Projects() {
     <section id="projects" className="bg-background-alt px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <SectionTitle index="02">프로젝트</SectionTitle>
-        <div className="grid gap-7 sm:grid-cols-3">
+        <div className="grid gap-7 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <article
               key={project.id}
@@ -22,9 +31,9 @@ export default function Projects() {
               </div>
               <h3 className="mb-2.5 text-lg font-semibold">{project.title}</h3>
               <p className="mb-4 grow text-sm text-foreground-muted">
-                프로젝트에 대한 간단한 설명을 여기에 작성하세요.
+                {project.description}
               </p>
-              <ul className="mb-4.5 flex flex-wrap gap-2">
+              <ul className="flex flex-wrap gap-2">
                 {project.tags.map((tag, i) => (
                   <li
                     key={i}
@@ -34,12 +43,6 @@ export default function Projects() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#"
-                className="text-sm font-semibold text-accent"
-              >
-                자세히 보기 →
-              </a>
             </article>
           ))}
         </div>
