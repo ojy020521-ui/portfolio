@@ -4,14 +4,16 @@ const PROJECTS = [
   {
     id: "01",
     title: "학부연구생",
-    tags: ["물리학", "연구"],
-    description: "학부연구생으로 참여하며 실험 설계와 데이터 분석 경험을 쌓았습니다.",
+    period: "2024.09 - 2025.12",
+    tags: ["전자 소재 분광학", "물리학"],
+    description: "전자 소재 분광학 연구실에서 학부연구생으로 참여하며 실험 설계와 데이터 분석 경험을 쌓았습니다.",
   },
   {
     id: "02",
     title: "KIST 인턴",
-    tags: ["인턴십", "연구"],
-    description: "한국과학기술연구원(KIST)에서 인턴으로 근무하며 실무 연구 경험을 쌓았습니다.",
+    period: "2026.01 - 2026.06",
+    tags: ["양자 정보 이론", "인턴십"],
+    description: "한국과학기술연구원(KIST)에서 양자 정보 이론 인턴으로 근무했습니다.",
   },
 ];
 
@@ -29,7 +31,8 @@ export default function Projects() {
               <div className="mb-4.5 flex h-11 w-11 items-center justify-center rounded-lg bg-background-alt text-sm font-bold text-foreground-muted">
                 {project.id}
               </div>
-              <h3 className="mb-2.5 text-lg font-semibold">{project.title}</h3>
+              <h3 className="mb-0.5 text-lg font-semibold">{project.title}</h3>
+              <p className="mb-2.5 text-xs text-foreground-muted">{project.period}</p>
               <p className="mb-4 grow text-sm text-foreground-muted">
                 {project.description}
               </p>
