@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-4xl">
-        <SectionTitle index="03">연락처</SectionTitle>
+        <SectionTitle index="06">연락처</SectionTitle>
         <p className="-mt-6 mb-9 text-foreground-muted">
           궁금한 점이나 협업 제안이 있으시면 언제든 연락 주세요.
         </p>

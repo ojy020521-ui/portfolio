@@ -4,7 +4,10 @@ import { useState } from "react";
 
 const NAV_LINKS = [
   { href: "#about", label: "소개" },
-  { href: "#projects", label: "프로젝트" },
+  { href: "#research", label: "연구" },
+  { href: "#awards", label: "수상" },
+  { href: "#activities", label: "활동" },
+  { href: "#skills", label: "스킬" },
   { href: "#contact", label: "연락처" },
 ];
 
