@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle";
 
 const RESEARCH = [
   {
-    id: "01",
+    id: "02",
     org: "KIST 양자기술연구단 · 양자정보이론연구실 현장실습",
     period: "2025.12 - 2026.06 (약 6개월)",
     title: "광자 손실 환경에서의 다중 모드 양자 위상 추정 최적화",
@@ -61,7 +61,7 @@ const RESEARCH = [
     ],
   },
   {
-    id: "02",
+    id: "01",
     org: "학부 연구생 · 광학 소재 및 포토닉 응용 연구",
     period: "2024.09 - 2025.12",
     title: "Er³⁺/Yb³⁺ 공도핑 CAG 세라믹의 광학 온도 센서 및 포토닉 응용 연구",
@@ -118,7 +118,7 @@ export default function Research() {
       <div className="mx-auto max-w-4xl">
         <SectionTitle index="02">연구</SectionTitle>
         <div className="flex flex-col gap-7">
-          {RESEARCH.map((item) => (
+          {[...RESEARCH].sort((a, b) => a.id.localeCompare(b.id)).map((item) => (
             <article
               key={item.id}
               className="rounded-[10px] border border-border bg-background p-7 sm:p-8"

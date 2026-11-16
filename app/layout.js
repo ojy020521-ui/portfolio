@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "오재엽 · Portfolio",
-  description: "오재엽의 포트폴리오 사이트",
+  description: "광학 소재와 포토닉스를 연구하는 물리학도 오재엽의 포트폴리오",
 };
 
 export default function RootLayout({ children }) {
