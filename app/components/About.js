@@ -59,12 +59,9 @@ export default function About() {
               <p className="mb-3 text-sm text-foreground-muted">
                 B.S. in Physics · 2021.03 입학
               </p>
-              <div className="rounded-lg bg-background-alt p-4">
-                <p className="mb-1 text-sm font-bold text-accent">7학기 조기졸업</p>
-                <p className="text-xs leading-relaxed text-foreground-muted">
-                  정규 8학기 과정을 7학기 만에 이수
-                </p>
-              </div>
+              <span className="inline-block rounded-full bg-background-alt px-3 py-1.5 text-sm font-bold text-accent">
+                7학기 조기졸업
+              </span>
             </div>
             <div className="mb-7">
               <h3 className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-foreground-muted">
