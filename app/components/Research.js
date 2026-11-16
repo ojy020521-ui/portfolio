@@ -37,7 +37,16 @@ const RESEARCH = [
         label: "논문 게재",
         title:
           "Multimodal emission platform based on Er³⁺/Yb³⁺ co-doped Ca₃Al₂Ge₃O₁₂ for advanced photonic applications",
-        meta: "Journal of Alloys and Compounds, 2026",
+        authors: "J.Y. Oh (제1저자), S.W. Wi, J.H. Han, Y.S. Lee*",
+        meta: "Journal of Alloys and Compounds 1061 (2026) 187483 · Elsevier",
+        link: "https://doi.org/10.1016/j.jallcom.2026.187483",
+        linkLabel: "DOI: 10.1016/j.jallcom.2026.187483",
+        highlights: [
+          "고상반응법으로 Er³⁺/Yb³⁺ 공도핑 CAG 형광체 합성, 순수 가넷 상 확인",
+          "UV(381 nm) / NIR(980 nm) 이중 여기에 따른 발광 색 조절 (G/R 비 11–14 vs 0.88–1.75)",
+          "FIR 기반 광학 온도 센서, 상온(293 K)에서 최대 상대 감도 1.70% K⁻¹, 673 K까지 동작",
+          "잠재 지문 검출 및 980 nm 하에서만 보이는 위조 방지 잉크 시연",
+        ],
       },
       {
         label: "국제학회 포스터 발표",
@@ -106,7 +115,35 @@ export default function Research() {
                       <p className="mb-1 text-sm font-medium leading-snug">
                         {achievement.title}
                       </p>
+                      {achievement.authors && (
+                        <p className="mb-1 text-xs text-foreground-muted">
+                          {achievement.authors}
+                        </p>
+                      )}
                       <p className="text-xs text-foreground-muted">{achievement.meta}</p>
+                      {achievement.highlights && (
+                        <ul className="mt-3 flex flex-col gap-1.5">
+                          {achievement.highlights.map((highlight) => (
+                            <li
+                              key={highlight}
+                              className="flex gap-2 text-xs text-foreground-muted sm:text-sm"
+                            >
+                              <span className="text-accent">·</span>
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {achievement.link && (
+                        <a
+                          href={achievement.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 inline-block rounded-full border border-border px-3 py-1.5 text-xs font-medium text-accent hover:bg-background"
+                        >
+                          논문 보기 ↗ <span className="text-foreground-muted">{achievement.linkLabel}</span>
+                        </a>
+                      )}
                     </div>
                   ))}
                 </div>
