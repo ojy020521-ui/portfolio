@@ -86,7 +86,7 @@ const RESEARCH = [
       {
         label: "국제학회 포스터 발표",
         title:
-          "Multimodal emission platform based on Er³⁺/Yb³⁺ codoped Ca₃Al₂Ge₃O₁₂ for advanced photonic applications",
+          "Excitation-dependent Optical Thermometric Properties of Er³⁺/Yb³⁺ Codoped Ca₃Al₂Ge₃O₁₂ Ceramics",
         authors: "Jaeyeop Oh (발표자), Sang Won Wi, Jaeho Han, Yunsang Lee*",
         meta: "10th Asian Applied Physics Conference · 2025, 일본 미야자키",
         link: "/aapc2025-poster.pdf",
