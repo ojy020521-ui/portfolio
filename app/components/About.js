@@ -62,7 +62,7 @@ export default function About() {
               <div className="rounded-lg bg-background-alt p-4">
                 <p className="mb-1 text-sm font-bold text-accent">7학기 조기졸업</p>
                 <p className="text-xs leading-relaxed text-foreground-muted">
-                  정규 8학기 과정을 7학기 만에 이수 (2022–2023 군 복무 기간 제외)
+                  정규 8학기 과정을 7학기 만에 이수
                 </p>
               </div>
             </div>
