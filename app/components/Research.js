@@ -85,8 +85,20 @@ const RESEARCH = [
       },
       {
         label: "국제학회 포스터 발표",
-        title: "Er³⁺/Yb³⁺ 공도핑 CAG 세라믹의 여기 파장 의존 광학 온도 센서 특성",
+        title:
+          "Multimodal emission platform based on Er³⁺/Yb³⁺ codoped Ca₃Al₂Ge₃O₁₂ for advanced photonic applications",
+        authors: "Jaeyeop Oh (발표자), Sang Won Wi, Jaeho Han, Yunsang Lee*",
         meta: "10th Asian Applied Physics Conference · 2025, 일본 미야자키",
+        link: "/aapc2025-poster.pdf",
+        linkText: "포스터 보기",
+        linkLabel: "PDF",
+        highlights: [
+          "XRD·Rietveld refinement·XPS로 불순물 없는 순수 CAG 가넷 상과 Er³⁺/Yb³⁺ 3가 상태 확인",
+          "381 nm / 980 nm 여기에 따른 발광 색 변화를 PL·UCL 및 CIE 색좌표로 확인",
+          "Judd-Ofelt 분석 — Er 농도 증가에 따른 Ω₂ 감소, Ω₄·Ω₆ 증가로 국소 대칭성 변화 해석",
+          "FIR(²H₁₁/₂/⁴S₃/₂) 기반 광학 온도 센서, 최대 상대 감도 0.94% K⁻¹(381 nm) · 1.70% K⁻¹(980 nm)",
+          "이중 여기 R/G 대비와 1540 nm NIR 발광을 이용한 다채널 위조 방지·암호화 응용 제안",
+        ],
       },
     ],
     details: [
@@ -229,7 +241,7 @@ export default function Research() {
                           rel="noopener noreferrer"
                           className="mt-3 inline-block rounded-full border border-border px-3 py-1.5 text-xs font-medium text-accent hover:bg-background"
                         >
-                          논문 보기 ↗ <span className="text-foreground-muted">{achievement.linkLabel}</span>
+                          {achievement.linkText ?? "논문 보기"} ↗ <span className="text-foreground-muted">{achievement.linkLabel}</span>
                         </a>
                       )}
                     </div>
