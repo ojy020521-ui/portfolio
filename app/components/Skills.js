@@ -11,7 +11,7 @@ const SKILLS = [
   },
   {
     name: "Python",
-    description: "수치 계산, 시뮬레이션, 데이터 시각화",
+    description: "QuTiP·Jupyter 기반 양자 시뮬레이션, 수치 계산, 데이터 시각화",
   },
 ];
 

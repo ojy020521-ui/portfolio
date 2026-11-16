@@ -3,18 +3,53 @@ import SectionTitle from "./SectionTitle";
 const RESEARCH = [
   {
     id: "01",
-    org: "KIST 인턴 · 양자정보이론 연구",
-    period: "2026.01 - 2026.06",
+    org: "KIST 양자기술연구단 · 양자정보이론연구실 현장실습",
+    period: "2025.12 - 2026.06 (약 6개월)",
     title: "광자 손실 환경에서의 다중 모드 양자 위상 추정 최적화",
     description:
-      "광자 손실이 존재하는 다중 모드 양자계에서 위상 추정 성능이 어떻게 변화하는지 분석한 연구입니다. Quantum Fisher Information(QFI)을 유도하고 Python 기반 수치 시뮬레이션을 수행하여, 위상이 인가되는 모드 수 k, 전체 모드 수 m, 손실률 η, 평균 광자 수 n̄, 입자 분포 비율 ε 등이 추정 정밀도에 미치는 영향을 확인했습니다. 이를 통해 고정밀 양자 센싱을 위한 최적의 위상 인가 조건을 탐색했습니다.",
+      "숭실대학교 현장실습학기제로 한국과학기술연구원(KIST) 양자정보이론연구실에서 약 6개월간 연구 인턴으로 근무했습니다. 다중 모드 양자 상태를 이용한 양자 위상 추정의 정밀도(Quantum Fisher Information, QFI)를 이론적으로 유도하고 QuTiP·Jupyter 시뮬레이션으로 검증하여, 광자 손실이 있는 현실적인 조건에서도 고전적 한계(shot-noise limit)를 넘는 양자적 이점의 조건을 도출했습니다.",
     keywords: [
       "Quantum Fisher Information(QFI)",
       "양자 계측",
       "다중 모드 위상 추정",
       "광자 손실",
-      "위상 인가 조건 최적화",
-      "Python 시뮬레이션",
+      "Lindblad master equation",
+      "QuTiP",
+      "Python · Jupyter",
+    ],
+    meta: [
+      { label: "역할", value: "연구 인턴 (논문 스터디, 이론 계산, 시뮬레이션 코드 개발, 연구 발표)" },
+      { label: "기간", value: "1기 2025.12 – 2026.02 (10주) · 2기 2026.03 – 2026.06 (16주)" },
+      { label: "근무", value: "주 5일 09:00–18:00 · 2기 출석 73일, 결석 0일" },
+    ],
+    phases: [
+      {
+        label: "1기 · 2025.12 – 2026.02",
+        title: "양자정보 기초 → 시뮬레이션 역량 구축",
+        items: [
+          "큐비트·양자 게이트·양자 회로, 압축 상태 등 양자정보 기초 이론 학습 및 주간 발표",
+          "QuTiP로 양자 텔레포테이션 회로, 광자 상태(Fock / coherent / cat / squeezed vacuum)의 평균 광자수와 Wigner 함수 구현",
+          "Lindblad master equation 학습 및 감쇠 효과를 고려한 vacuum Rabi oscillation 시뮬레이션",
+          "Squeezed vacuum 상태 분석 논문 스터디 — QFI를 직접 계산해 논문 값과 일치 확인",
+          "Hong-Ou-Mandel 간섭계 민감도 분석, 양자 에러 정정 학습 및 발표",
+        ],
+      },
+      {
+        label: "2기 · 2026.03 – 2026.06",
+        title: "연구 프로젝트 — 다중 모드 양자 상태의 위상 추정 정밀도 분석",
+        items: [
+          "NOON, coherent squeezed vacuum 등 단일·소수 모드 상태의 QFI를 손실 유무에 따라 계산",
+          "다중 모드(m-mode)로 확장 — 수치 계산 한계를 해석적 접근으로 전환해 QFI 일반식 유도",
+          "k개의 number operator로 구성된 generator로 일반화하여 최적 조건 탐색 및 코드로 검증",
+          "검증 과정에서 기존 QFI 식의 오류를 직접 발견해 재유도·재계산",
+          "조건부 광자 검출 기반 상태 생성 논문 스터디, 연구 중간·최종 결과 발표",
+        ],
+      },
+    ],
+    results: [
+      "다중 모드 상태에서 generator 구성(k)에 따른 QFI 최적 조건을 해석적으로 유도하고 수치 시뮬레이션으로 검증",
+      "광자 손실 조건에서 shot-noise limit을 넘는 파라미터 영역과 양자적 이점이 최대인 조합 도출",
+      "지도 연구원 평가: 초반의 계산상 어려움을 피드백으로 극복하고 주어진 과제를 성공적으로 수행",
     ],
     details: [
       "광자 손실을 고려한 다중 모드 위상 추정 모델 분석",
@@ -100,6 +135,59 @@ export default function Research() {
                     </li>
                   ))}
                 </ul>
+              )}
+
+              {item.meta && (
+                <dl className="mb-6 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-[auto_1fr]">
+                  {item.meta.map((row) => (
+                    <div key={row.label} className="contents">
+                      <dt className="text-xs font-semibold uppercase tracking-wide text-foreground-muted sm:pt-0.5">
+                        {row.label}
+                      </dt>
+                      <dd className="mb-2 text-foreground-muted sm:mb-0">{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+
+              {item.phases && (
+                <div className="mb-6 grid gap-3 sm:grid-cols-2">
+                  {item.phases.map((phase) => (
+                    <div key={phase.label} className="rounded-lg bg-background-alt p-4">
+                      <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-accent">
+                        {phase.label}
+                      </p>
+                      <p className="mb-3 text-sm font-medium leading-snug">{phase.title}</p>
+                      <ul className="flex flex-col gap-1.5">
+                        {phase.items.map((point) => (
+                          <li
+                            key={point}
+                            className="flex gap-2 text-xs text-foreground-muted sm:text-sm"
+                          >
+                            <span className="text-accent">·</span>
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {item.results && (
+                <div className="mb-6 rounded-lg bg-background-alt p-4">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-accent">
+                    주요 성과
+                  </p>
+                  <ul className="flex flex-col gap-1.5">
+                    {item.results.map((result) => (
+                      <li key={result} className="flex gap-2 text-sm text-foreground-muted">
+                        <span className="text-accent">✓</span>
+                        {result}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
 
               {item.achievements && (
