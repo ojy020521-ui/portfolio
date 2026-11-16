@@ -36,7 +36,7 @@ export default function About() {
               </div>
             </div>
             <a
-              href="/transcript.png"
+              href="/transcript.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-block rounded-full border border-border px-3 py-1.5 text-xs font-medium text-accent hover:bg-background-alt"
