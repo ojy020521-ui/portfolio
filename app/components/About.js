@@ -15,7 +15,13 @@ export default function About() {
               광학 소재 실험부터 양자정보이론 시뮬레이션까지, 실험과 계산을 오가며
               데이터로 답을 찾아가는 과정에 흥미를 느낍니다.
             </p>
-            <div className="grid grid-cols-2 gap-6 border-t border-border pt-8">
+            <div className="grid grid-cols-3 gap-4 border-t border-border pt-8 sm:gap-6">
+              <div>
+                <p className="mb-1 text-2xl font-bold tracking-tight text-accent">
+                  1<span className="text-sm font-medium text-foreground-muted"> / 31</span>
+                </p>
+                <p className="text-xs text-foreground-muted">학과 석차 · 백분율 96.5</p>
+              </div>
               <div>
                 <p className="mb-1 text-2xl font-bold tracking-tight">
                   4.15<span className="text-sm font-medium text-foreground-muted"> / 4.5</span>
@@ -29,6 +35,14 @@ export default function About() {
                 <p className="text-xs text-foreground-muted">전공 평점</p>
               </div>
             </div>
+            <a
+              href="/transcript.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block rounded-full border border-border px-3 py-1.5 text-xs font-medium text-accent hover:bg-background-alt"
+            >
+              성적증명서 보기 ↗
+            </a>
           </div>
           <div>
             <div className="mb-7">
