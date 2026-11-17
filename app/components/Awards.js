@@ -26,9 +26,9 @@ const ITEMS = [
 
 export default function Awards() {
   return (
-    <section id="awards" className="px-6 py-24">
+    <section id="awards" className="bg-background-alt px-6 py-24">
       <div className="mx-auto max-w-4xl">
-        <SectionTitle index="03">수상 및 발표</SectionTitle>
+        <SectionTitle index="04">수상 및 발표</SectionTitle>
         <div className="grid gap-5 sm:grid-cols-2">
           {ITEMS.map((item) => (
             <article

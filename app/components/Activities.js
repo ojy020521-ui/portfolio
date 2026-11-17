@@ -32,9 +32,9 @@ const ACTIVITIES = [
 
 export default function Activities() {
   return (
-    <section id="activities" className="bg-background-alt px-6 py-24">
+    <section id="activities" className="px-6 py-24">
       <div className="mx-auto max-w-4xl">
-        <SectionTitle index="04">리더십 및 봉사활동</SectionTitle>
+        <SectionTitle index="05">리더십 및 봉사활동</SectionTitle>
         <div className="flex flex-col gap-7">
           {ACTIVITIES.map((activity) => (
             <article

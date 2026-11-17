@@ -39,9 +39,9 @@ const SKILLS = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-6 py-24">
+    <section id="skills" className="bg-background-alt px-6 py-24">
       <div className="mx-auto max-w-4xl">
-        <SectionTitle index="05">Skills & Tools</SectionTitle>
+        <SectionTitle index="06">Skills & Tools</SectionTitle>
 
         <p className="-mt-6 mb-6 text-sm font-semibold uppercase tracking-wide text-foreground-muted">
           Experimental Techniques
