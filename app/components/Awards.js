@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionTitle from "./SectionTitle";
 
 const ITEMS = [
@@ -21,6 +22,12 @@ const ITEMS = [
       "여기 파장(381 / 980 nm)에 따른 발광 특성과 FIR 기반 광학 온도 센서 성능을 발표했습니다.",
     link: "/aapc2025-poster.pdf",
     linkText: "포스터 보기",
+    image: {
+      src: "/aapc2025-poster.jpg",
+      width: 1800,
+      height: 2400,
+      alt: "10th Asian Applied Physics Conference 발표 포스터 미리보기",
+    },
   },
 ];
 
@@ -33,8 +40,29 @@ export default function Awards() {
           {ITEMS.map((item) => (
             <article
               key={item.title}
-              className="flex flex-col rounded-[10px] border border-border bg-background p-7"
+              className="flex flex-col overflow-hidden rounded-[10px] border border-border bg-background"
             >
+              {item.image && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block aspect-[16/9] overflow-hidden border-b border-border bg-white"
+                >
+                  <Image
+                    src={item.image.src}
+                    width={item.image.width}
+                    height={item.image.height}
+                    alt={item.image.alt}
+                    sizes="(min-width: 640px) 420px, 100vw"
+                    className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-3 right-3 rounded-full bg-black/70 px-3 py-1 text-xs font-medium text-white">
+                    전체 포스터 보기 ↗
+                  </span>
+                </a>
+              )}
+              <div className="flex flex-1 flex-col p-7">
               <div className="mb-4 flex flex-wrap items-center gap-2.5">
                 <span
                   className={
@@ -64,6 +92,7 @@ export default function Awards() {
                   {item.linkText} ↗
                 </a>
               )}
+              </div>
             </article>
           ))}
         </div>
