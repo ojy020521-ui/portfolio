@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
 
-// image: { src, width, height, alt } / links: [{ label, href }] — 비워 두면 표시되지 않습니다.
+// image: { src, width, height, alt, caption } / photos: { caption, items: [image...] } / links: [{ label, href }] — 비워 두면 표시되지 않습니다.
 const PROJECTS = [
   {
     id: "01",
@@ -37,6 +37,24 @@ const PROJECTS = [
       "CdS 광전도 센서로 실내외 조도를 측정해 실내 밝기를 일정하게 유지하는 시스템을 설계하고 제작했습니다. 외부가 어두우면 서보모터로 가림막을 닫아 빛 손실을 줄이고, 외부 빛이 들어올 때는 LED 점등 개수를 조절해 실내 밝기를 보정합니다.",
     role: "센서 신호 처리 및 제어 코드 작성",
     image: null,
+    photos: {
+      caption:
+        "완성품 외관(왼쪽)과 내부(오른쪽) · 화살표는 실외·실내 CdS 조도센서, 위쪽은 서보 가림막과 LED 조명",
+      items: [
+        {
+          src: "/projects/light-exterior.png",
+          width: 964,
+          height: 1070,
+          alt: "자동 밝기 제어 시스템 완성품 외관: 외벽의 실외 조도센서와 Arduino UNO 배선",
+        },
+        {
+          src: "/projects/light-interior.png",
+          width: 866,
+          height: 1040,
+          alt: "자동 밝기 제어 시스템 내부: 실내 조도센서, 서보모터, LED",
+        },
+      ],
+    },
     highlights: [
       "실내외 조도센서 2채널로 가림막 개폐와 조명 단계 제어",
       "기준값 근처에서 생기는 LED 깜빡임과 가림막 반복 개폐 문제 해결",
@@ -79,6 +97,35 @@ export default function Projects() {
                   {project.image.caption && (
                     <figcaption className="bg-background-alt px-7 py-3 text-xs leading-relaxed text-foreground-muted">
                       {project.image.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+              {project.photos && (
+                <figure className="border-b border-border">
+                  <div className="grid grid-cols-2 gap-px bg-border">
+                    {project.photos.items.map((photo) => (
+                      <a
+                        key={photo.src}
+                        href={photo.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block aspect-[5/6] overflow-hidden bg-background-alt"
+                      >
+                        <Image
+                          src={photo.src}
+                          width={photo.width}
+                          height={photo.height}
+                          alt={photo.alt}
+                          sizes="(min-width: 640px) 210px, 50vw"
+                          className="h-full w-full object-cover transition-opacity hover:opacity-90"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                  {project.photos.caption && (
+                    <figcaption className="bg-background-alt px-7 py-3 text-xs leading-relaxed text-foreground-muted">
+                      {project.photos.caption}
                     </figcaption>
                   )}
                 </figure>
