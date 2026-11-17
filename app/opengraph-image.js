@@ -5,7 +5,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const STATS = [
-  { value: "1st-author", label: "Journal paper · J. Alloys Compd. 2026" },
+  { value: "1st-author", label: "SCIE paper · J. Alloys Compd. 2026" },
   { value: "1 / 31", label: "Department rank" },
   { value: "4.15 / 4.5", label: "GPA" },
 ];
