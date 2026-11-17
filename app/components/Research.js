@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionTitle from "./SectionTitle";
 
 const RESEARCH = [
@@ -98,6 +99,28 @@ const RESEARCH = [
           "FIR(²H₁₁/₂/⁴S₃/₂) 기반 광학 온도 센서, 최대 상대 감도 0.94% K⁻¹(381 nm) · 1.70% K⁻¹(980 nm)",
           "이중 여기 R/G 대비와 1540 nm NIR 발광을 이용한 다채널 위조 방지·암호화 응용 제안",
         ],
+      },
+    ],
+    figures: [
+      {
+        src: "/research/samples.png",
+        width: 738,
+        height: 454,
+        alt: "Er 농도별 CAG:Er/Yb 세라믹 시료를 자연광, 365 nm UV, 980 nm 레이저 아래에서 촬영한 사진 15장",
+        title: "여기 조건에 따라 달라지는 발광",
+        caption:
+          "Er³⁺ 농도 x = 0.005–0.04 시료를 (d–h) 자연광, (i–m) 365 nm UV 램프, (n–r) 980 nm 레이저 아래에서 촬영",
+        source: "논문 Fig. 5(d–r)",
+      },
+      {
+        src: "/research/fingerprint.png",
+        width: 1102,
+        height: 638,
+        alt: "CAG:Er/Yb 형광체 분말로 현출한 잠재 지문 발광 사진과 융선을 따라 측정한 세기 그래프",
+        title: "잠재 지문 검출",
+        caption:
+          "x = 0.02 형광체 분말로 유리 기판 위 지문을 현출하고 365 nm UV 아래에서 촬영 · 빨간 선을 따라 측정한 세기 프로파일로 융선 대비를 정량 확인",
+        source: "논문 Fig. 6(a)",
       },
     ],
     details: [
@@ -244,6 +267,35 @@ export default function Research() {
                         </a>
                       )}
                     </div>
+                  ))}
+                </div>
+              )}
+
+              {item.figures && (
+                <div className="mb-6 grid gap-4 sm:grid-cols-2">
+                  {item.figures.map((figure) => (
+                    <figure
+                      key={figure.src}
+                      className="overflow-hidden rounded-lg border border-border bg-background-alt"
+                    >
+                      <a href={figure.src} target="_blank" rel="noopener noreferrer">
+                        <Image
+                          src={figure.src}
+                          width={figure.width}
+                          height={figure.height}
+                          alt={figure.alt}
+                          sizes="(min-width: 640px) 400px, 100vw"
+                          className="h-auto w-full bg-black transition-opacity hover:opacity-90"
+                        />
+                      </a>
+                      <figcaption className="p-4">
+                        <p className="mb-1 text-sm font-semibold tracking-tight">{figure.title}</p>
+                        <p className="mb-1.5 text-xs leading-relaxed text-foreground-muted">
+                          {figure.caption}
+                        </p>
+                        <p className="text-[11px] text-foreground-muted/80">출처: {figure.source}</p>
+                      </figcaption>
+                    </figure>
                   ))}
                 </div>
               )}
