@@ -103,6 +103,17 @@ const RESEARCH = [
     ],
     figures: [
       {
+        src: "/research/thermometry.png",
+        width: 881,
+        height: 629,
+        wide: true,
+        alt: "381 nm와 980 nm 여기에서 온도에 따른 FIR 선형 피팅과 절대·상대 감도 곡선",
+        title: "FIR 기반 광학 온도 센서 성능",
+        caption:
+          "(e, f) 293–673 K에서 녹색 발광 FIR이 온도에 따라 선형 증가 (R² = 0.9995 / 0.9863) · (g, h) 절대 감도 Sa와 상대 감도 Sr — 980 nm 여기(x = 0.005)에서 293 K 최대 Sr 1.70% K⁻¹",
+        source: "논문 Fig. 7(e–h)",
+      },
+      {
         src: "/research/samples.png",
         width: 738,
         height: 454,
@@ -276,16 +287,25 @@ export default function Research() {
                   {item.figures.map((figure) => (
                     <figure
                       key={figure.src}
-                      className="overflow-hidden rounded-lg border border-border bg-background-alt"
+                      className={`overflow-hidden rounded-lg border border-border bg-background-alt ${
+                        figure.wide ? "sm:col-span-2" : ""
+                      }`}
                     >
-                      <a href={figure.src} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={figure.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block ${figure.wide ? "bg-white" : ""}`}
+                      >
                         <Image
                           src={figure.src}
                           width={figure.width}
                           height={figure.height}
                           alt={figure.alt}
-                          sizes="(min-width: 640px) 400px, 100vw"
-                          className="h-auto w-full bg-black transition-opacity hover:opacity-90"
+                          sizes={figure.wide ? "(min-width: 640px) 820px, 100vw" : "(min-width: 640px) 400px, 100vw"}
+                          className={`h-auto w-full transition-opacity hover:opacity-90 ${
+                            figure.wide ? "mx-auto max-w-2xl bg-white" : "bg-black"
+                          }`}
                         />
                       </a>
                       <figcaption className="p-4">
