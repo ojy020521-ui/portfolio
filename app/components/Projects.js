@@ -11,7 +11,14 @@ const PROJECTS = [
     description:
       "구동력과 감쇠가 있는 이중우물 비선형 오실레이터(Duffing oscillator)를 Python으로 수치 해석했습니다. 구동 진폭을 바꿔가며 주기 운동이 카오스로 전이하는 과정을 위상공간, 포인카레 단면, FFT 스펙트럼으로 분석했습니다.",
     role: "모델링, 시뮬레이션, 분석 단독 수행",
-    image: null,
+    image: {
+      src: "/projects/duffing-chaos.png",
+      width: 1088,
+      height: 376,
+      alt: "구동 진폭 f = 0.5에서 변위, 속도 시계열과 위상공간 궤적·포인카레 단면 그래프",
+      caption:
+        "구동 진폭 f = 0.5에서의 카오스 운동: 변위 z(τ), 속도 ż(τ), 위상공간 궤적과 포인카레 단면 (20T–30T 구간)",
+    },
     highlights: [
       "무차원 스케일 변환으로 파라미터를 5개(a, b, c, F, Ω)에서 3개(γ, f, ω)로 축약",
       "평형점 근처 조화진동 근사의 이론 주기(T₀ ≈ 4.44)와 수치 결과 일치 확인",
@@ -53,21 +60,28 @@ export default function Projects() {
               className="flex flex-col overflow-hidden rounded-[10px] border border-border bg-background"
             >
               {project.image && (
-                <a
-                  href={project.image.src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block border-b border-border bg-background-alt"
-                >
-                  <Image
-                    src={project.image.src}
-                    width={project.image.width}
-                    height={project.image.height}
-                    alt={project.image.alt}
-                    sizes="(min-width: 640px) 420px, 100vw"
-                    className="h-auto w-full"
-                  />
-                </a>
+                <figure className="border-b border-border">
+                  <a
+                    href={project.image.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-white"
+                  >
+                    <Image
+                      src={project.image.src}
+                      width={project.image.width}
+                      height={project.image.height}
+                      alt={project.image.alt}
+                      sizes="(min-width: 640px) 420px, 100vw"
+                      className="h-auto w-full transition-opacity hover:opacity-90"
+                    />
+                  </a>
+                  {project.image.caption && (
+                    <figcaption className="bg-background-alt px-7 py-3 text-xs leading-relaxed text-foreground-muted">
+                      {project.image.caption}
+                    </figcaption>
+                  )}
+                </figure>
               )}
               <div className="flex flex-1 flex-col p-7">
                 <div className="mb-3 flex flex-wrap items-center gap-3">
